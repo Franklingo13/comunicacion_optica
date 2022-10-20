@@ -34,15 +34,15 @@ if(millis() > MuestreoActual+periodo){
     MuestreoActual = millis();
 
     if (myFile) { 
-        Serial.print("Escribiendo SD: ");
-        
-          // lee los valores
-        myFile.print(sensorValue)
-        myFile.close(); //cerramos el archivo
-  } else {
-    Serial.println("Error al abrir el archivo");
-  }
-     
+      Serial.print("Escribiendo SD: ");
+      
+        // lee los valores
+      myFile.print(sensorValue);
+      myFile.close(); //cerramos el archivo
+    } else {
+      Serial.println("Error al abrir el archivo");
+    }
+       
     //Serial.println(sensorValue); //muestra el valor de la senal muestreada
     //Serial.println(voltage); //muestra el valor de la senal real
     start_bit();
