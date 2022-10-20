@@ -17,14 +17,14 @@ void loop() {
 
   Serial.println(sensorValue);
   
-//  // start bit
+  // start bit
 //  digitalWrite(LASERPIN, HIGH);
 //  delay(10);
 //  digitalWrite(LASERPIN, LOW);
   
   for (int i=0; i<10; i++){
     digitalWrite(LASERPIN, bits[i]*255);
-    delay(10);
+    delayMicroseconds(850);
   }
 
   //digitalWrite(LASERPIN, LOW); 
