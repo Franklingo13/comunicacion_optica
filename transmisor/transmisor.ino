@@ -13,14 +13,14 @@ void loop() {
   // read the value from the sensor:
   sensorValue = analogRead(sensorPin);
   int bits[]={bitRead(sensorValue,0), bitRead(sensorValue,1), bitRead(sensorValue,2), bitRead(sensorValue,3), bitRead(sensorValue,4), bitRead(sensorValue,5), bitRead(sensorValue,6), bitRead(sensorValue,7), bitRead(sensorValue,8), bitRead(sensorValue,9)};
-   //int bits[]={bitRead(sensorValue,9), bitRead(sensorValue,8), bitRead(sensorValue,7), bitRead(sensorValue,6), bitRead(sensorValue,5), bitRead(sensorValue,4), bitRead(sensorValue,3), bitRead(sensorValue,2), bitRead(sensorValue,1), bitRead(sensorValue,0)};
+  //int bits[]={bitRead(sensorValue,9), bitRead(sensorValue,8), bitRead(sensorValue,7), bitRead(sensorValue,6), bitRead(sensorValue,5), bitRead(sensorValue,4), bitRead(sensorValue,3), bitRead(sensorValue,2), bitRead(sensorValue,1), bitRead(sensorValue,0)};
 
   Serial.println(sensorValue);
   
   // start bit
-//  digitalWrite(LASERPIN, HIGH);
-//  delay(10);
-//  digitalWrite(LASERPIN, LOW);
+  digitalWrite(LASERPIN, HIGH);
+  delay(10);
+  digitalWrite(LASERPIN, LOW);
   
   for (int i=0; i<10; i++){
     digitalWrite(LASERPIN, bits[i]*255);
