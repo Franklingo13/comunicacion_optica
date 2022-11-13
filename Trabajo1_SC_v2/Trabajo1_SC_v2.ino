@@ -2,7 +2,7 @@
 int sensorPin = A1;    // select the input pin for the potentiometer
 int sensorValue = 0;  // variable to store the value coming from the sensor
 
-int periodo=45;      //en milisegundos
+int periodo=10;      //en milisegundos
 unsigned long MuestreoActual=0;
 unsigned long tiempo=0;
 
@@ -24,7 +24,7 @@ void loop() {
 
     //condicional para transmitir por 20 periodos
 
-    if(millis()<18000){
+    //if(millis()<18000){
       sensorValue = analogRead(sensorPin);
     int bits[]={1, bitRead(sensorValue,9), bitRead(sensorValue,8), bitRead(sensorValue,7), bitRead(sensorValue,6), bitRead(sensorValue,5), bitRead(sensorValue,4), bitRead(sensorValue,3), bitRead(sensorValue,2), bitRead(sensorValue,1), bitRead(sensorValue,0)};
     //int bits[]={1,1,0,1,0,1,0,1,0,1,0};
@@ -43,6 +43,7 @@ void loop() {
         delayMicroseconds(800); //se cambió a 700 para darle más tiempo a la escritura 
       }
       digitalWrite(LASERPIN, LOW); 
+      //Serial.println(LASERPIN);
       tiempo = micros();
     //Serial.println(tiempo);
     //Serial.println("");
@@ -50,7 +51,7 @@ void loop() {
       for (int i=0; i<11; i++){
         bits[i] = 0;
       }
-    }
+    //}
     
 
     
